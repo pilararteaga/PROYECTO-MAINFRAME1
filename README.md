@@ -2,4 +2,6 @@
 Proyecto Final “PROYECCIÓN DEL PBI EN EL PERÚ PARA EL AÑO 2020”
 ## Integrantes:
 •	Arteaga Argomedo, Pilar
--m •	Reyna Costa, Renzo
+•	Reyna Costa, Renzo
+### Introducción 
+## ¿Qué es el PBI?
