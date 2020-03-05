@@ -1,6 +1,6 @@
 # PROYECTO-MAINFRAME1
 Proyecto Final “PROYECCIÓN DEL PBI EN EL PERÚ PARA EL AÑO 2020”
-https://www.google.com/search?q=imagenes+del+pbi&rlz=1C1CYCW_enPE788PE788&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjqq_-TsYLoAhUKH7kGHd_lAJUQ_AUoAXoECAwQAw&biw=1242&bih=580#imgrc=9rwICUeeit8y9M
+ 
 ## Integrantes:
 •	Arteaga Argomedo, Pilar
 •	Reyna Costa, Renzo
