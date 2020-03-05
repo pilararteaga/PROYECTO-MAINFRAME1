@@ -1,6 +1,6 @@
 # PROYECTO-MAINFRAME1
 Proyecto Final “PROYECCIÓN DEL PBI EN EL PERÚ PARA EL AÑO 2020”
- 
+ https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjC5OXft4LoAhU0IrkGHRtSA5cQjRx6BAgBEAQ&url=https%3A%2F%2Fadministracion.unmsm.edu.pe%2Ftalento-fca%2Fpublicaciones-de-docentes%2F1132-es-el-pbi-un-buen-indicador-de-desarrollo&psig=AOvVaw0_BKTJojUmtkdtGevOUKtC&ust=1583466827290597
 ## Integrantes:
 •	Arteaga Argomedo, Pilar
 •	Reyna Costa, Renzo
