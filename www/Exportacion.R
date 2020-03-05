@@ -1,4 +1,6 @@
-exportacion<-sidebarLayout(
-  sidebarPanel(),
-  mainPanel()
+exportacion<-fluidRow(
+  box(
+    title = HTML("Exportacion"),
+    #downloadButton("downloadDataX", "Descargar")
+  )
 )

@@ -55,8 +55,17 @@ library("readxl")
 library("tools")
 library("dplyr")
 library("ggplot2")
+library("rio")
+library("xlsx")
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
+    
+    data__ <- eventReactive(input$btnURLData,{
+        if(is.null(input$url_data)){
+            return()
+        }
+        xx = rio::import(input$url_data)
+    })
     
     data_<-reactive({
         d.data.load<-input$file_data
@@ -74,6 +83,11 @@ server <- function(input, output, session) {
     })
     
     iData<-reactive({
+        type<-input$radio_data
+        #View(type)
+        if("url" %in% type){
+            return (data__())
+        }
         d.data.load<-input$file_data
         if(is.null(d.data.load))
             return (NULL)
@@ -207,11 +221,11 @@ server <- function(input, output, session) {
         
         
         #View(x)
-        return (x)
+        return (as.data.frame(x))
     })
 
     output$data_file<-renderTable({
-        data_()
+        iData()
     })
     
     output$data_use<-renderTable({
@@ -222,8 +236,7 @@ server <- function(input, output, session) {
         data_filtered()
     })
     
-    output$data_plot<-renderPlot({
-        
+    plot_<-reactive({
         f<-as.data.frame(data_filtered())
         d<-f
         d[,1]<-(as.integer(d[,1])) #Conversion de anios a integer
@@ -231,10 +244,25 @@ server <- function(input, output, session) {
         nc<-s_colnames_idX()
         colnames(d)<-nc
         
+        return(as.data.frame(d))
+    })
+    
+    output$data_plot_reg<-renderPlot({
         
-        #View(length(d[1,]))
-        #View(nc)
-        #View(d)
+        d<-plot_()
+        
+        selected<-input$select_indicator
+        ggplot(d) +
+            ylab("")+
+            xlab("Years")+
+            geom_point(aes_string(x="years", y=selected),color="red", alpha=0.7,position='identity') + 
+            geom_line(aes_string(x="years", y=selected))+
+            abline(lm(years~selected), col="purple",)
+    })
+    
+    output$data_plot<-renderPlot({
+        
+        d<-plot_()
         
         selected<-input$select_indicator
         ggplot(d) +
@@ -280,10 +308,19 @@ server <- function(input, output, session) {
         return (names)
     })
     
+    output$downloadDataX<-downloadHandler(
+        filename = function(){
+            sprintf("data-%s.csv","guardado")
+        },
+        content = function(fname){
+            write.csv(data_filtered(), fname)
+        }
+    )
+    
     observe({
         updateSelectInput(session, "select_indicator",
                           choices = s_vars()
-        )})
+    )})
     
 }
 
