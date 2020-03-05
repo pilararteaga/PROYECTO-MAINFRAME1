@@ -1,0 +1,4 @@
+exportacion<-sidebarLayout(
+  sidebarPanel(),
+  mainPanel()
+)

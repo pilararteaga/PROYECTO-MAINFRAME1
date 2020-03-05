@@ -1,0 +1,9 @@
+lSrc<-function(name){source(sprintf("www/%s.R",name))}
+lSrc("Index")
+lSrc("Recoleccion")
+lSrc("Modelado")
+lSrc("Transformacion")
+lSrc("Preparacion")
+lSrc("Exploracion")
+lSrc("Modelo")
+lSrc("Exportacion")
